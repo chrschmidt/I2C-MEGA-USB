@@ -18,7 +18,8 @@ F_CPU        = 16000000
 F_USB        = $(F_CPU)
 OPTIMIZATION = 3
 TARGET       = i2cmegausb
-SRC          = $(TARGET).c Descriptors.c $(LUFA_SRC_USB) #$(LUFA_SRC_USBCLASS)
+SRC          = $(TARGET).c Descriptors.c $(LUFA_SRC_USB) i2c.c 
+#$(LUFA_SRC_USBCLASS)
 SRC         += $(LUFA_SRC_PLATFORM) $(LUFA_SRC_SERIAL) $(LUFA_SRC_TWI)
 LUFA_PATH    = lufa/LUFA
 CC_FLAGS     = -DUSE_LUFA_CONFIG_HEADER -IConfig
