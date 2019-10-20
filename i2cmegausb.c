@@ -21,7 +21,7 @@
     MA 02110-1301 USA.							     */
 /* ------------------------------------------------------------------------- */
 
-// #define __IMU__DEBUG__
+#define __IMU__DEBUG__
 
 #include "Config/LUFAConfig.h"
 #include "version.h"
@@ -160,8 +160,11 @@ void i2c_handle_io_request (void) {
     }
 
     /* Send the empty USB acknowledge frame on 0-byte data operations */
-    if (!i2c_expected)
+    if (!i2c_expected) {
+        if (i2c_datadir)
+            Endpoint_ClearIN ();
         Endpoint_ClearStatusStage ();
+    }
 }
 
 /* This function is called from within the main loop to finish
