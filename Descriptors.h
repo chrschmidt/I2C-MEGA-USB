@@ -31,7 +31,6 @@
 #ifndef _DESCRIPTORS_H_
 #define _DESCRIPTORS_H_
 
-
 #include <avr/pgmspace.h>
 #include "LUFA/Drivers/USB/USB.h"
 
